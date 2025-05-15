@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	config.Init()
+
 	rclient, err := queue.NewRedisClient(config.RedisURL)
 	if err != nil {
 		log.WithError(err).Fatal("Unable to create redis client")
